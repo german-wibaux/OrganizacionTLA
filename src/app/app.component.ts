@@ -3,12 +3,7 @@ import { setHours, setMinutes, isSameMonth } from 'date-fns';
 // import { CalendarEvent } from 'angular-calendar';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import {
-  Component,
-  ChangeDetectionStrategy,
-  ViewChild,
-  TemplateRef
-} from '@angular/core';
+
 
 import {
   CalendarEvent,
@@ -27,6 +22,7 @@ import {
 } from 'date-fns';
 
 import { Subject } from 'rxjs';
+import { Component, ViewChild, TemplateRef } from '@angular/core';  
 
 const colors: any = {
   red: {
