@@ -5,6 +5,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 
+
 import {
   CalendarEvent,
   CalendarEventAction,
@@ -39,6 +40,8 @@ const colors: any = {
   }
 };
 
+let editEvents;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -47,7 +50,9 @@ const colors: any = {
 
 
 export class AppComponent {
-  title = 'app';
+  title = 'Organizacion Soporte Produccion';
+
+  editEvents = false;
 
   @ViewChild('modalContent') modalContent: TemplateRef<any>;
 
@@ -80,36 +85,37 @@ export class AppComponent {
 
   events: CalendarEvent[] = [
     {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'A 3 day event',
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("July 22, 2018 00:00:00")), 3),
+      end: new Date("July 22, 2018 23:59:59"),
+      title: 'Cierre de Cartera',
       color: colors.red,
       actions: this.actions
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'An event with no end date',
-      color: colors.yellow,
-      actions: this.actions
-    },
-    {
-      start: subDays(endOfMonth(new Date()), 3),
-      end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
-      color: colors.blue
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: new Date(),
-      title: 'A draggable and resizable event',
-      color: colors.yellow,
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
     }
+    // {
+    //   start: startOfDay(new Date()),
+    //   title: 'An event with no end date',
+    //   color: colors.yellow,
+    //   actions: this.actions
+    // },
+    // {
+    //   start: subDays(endOfMonth(new Date()), 3),
+    //   end: addDays(endOfMonth(new Date()), 3),
+    //   title: 'A long event that spans 2 months',
+    //   color: colors.blue
+    // },
+    // {
+    //   start: addHours(startOfDay(new Date()), 2),
+    //   end: new Date(),
+    //   title: 'A draggable and resizable event',
+    //   color: colors.yellow,
+    //   actions: this.actions,
+    //   resizable: {
+    //     beforeStart: true,
+    //     afterEnd: true
+    //   },
+    //   draggable: true
+    // }
   ];
 
   
@@ -133,16 +139,16 @@ export class AppComponent {
   }
  
 
-  eventTimesChanged({
-    event,
-    newStart,
-    newEnd
-  }: CalendarEventTimesChangedEvent): void {
-    event.start = newStart;
-    event.end = newEnd;
-    this.handleEvent('Dropped or resized', event);
-    this.refresh.next();
-  }
+  // eventTimesChanged({
+  //   event,
+  //   newStart,
+  //   newEnd
+  // }: CalendarEventTimesChangedEvent): void {
+  //   event.start = newStart;
+  //   event.end = newEnd;
+  //   this.handleEvent('Dropped or resized', event);
+  //   this.refresh.next();
+  // }
 
   handleEvent(action: string, event: CalendarEvent): void {
     this.modalData = { event, action };
@@ -163,5 +169,10 @@ export class AppComponent {
     });
     this.refresh.next();
   }
+
+  openEditEvents(): void {
+    this.editEvents = !this.editEvents;
+  }
+
 }
 

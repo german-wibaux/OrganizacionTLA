@@ -7,13 +7,15 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
- import { FlatpickrModule } from 'angularx-flatpickr';
+ import { FlatpickrModule  } from 'angularx-flatpickr';
 
 import { AppComponent } from './app.component';
+import { ListEventsComponent } from './list-events/list-events.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListEventsComponent
   ],
   imports: [
     CommonModule,
