@@ -86,12 +86,95 @@ export class AppComponent {
   events: CalendarEvent[] = [
     {
       // subDays(startOfDay(new Date()), 0)
-      start: subDays(startOfDay(new Date("July 22, 2018 00:00:00")), 3),
-      end: new Date("July 22, 2018 23:59:59"),
+      start: subDays(startOfDay(new Date("August 1, 2018 00:00:00")), 0),
+      end: new Date("August 1, 2018 23:59:59"),
+      title: 'Cierre Contable Etapa 1 Julio*',
+      color: colors.red,
+      actions: this.actions
+    },
+    {
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("August 7, 2018 00:00:00")), 0),
+      end: new Date("August 7, 2018 23:59:59"),
+      title: 'Vencimiento Julio',
+      color: colors.red,
+      actions: this.actions
+    },
+    {
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("August 7, 2018 00:00:00")), 0),
+      end: new Date("August 7, 2018 23:59:59"),
+      title: 'Tablero Fisico*',
+      color: colors.yellow,
+      actions: this.actions
+    },
+    {
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("August 10, 2018 00:00:00")), 0),
+      end: new Date("August 10, 2018 23:59:59"),
+      title: 'Impuesto Sello Pampa*',
+      color: colors.yellow,
+      actions: this.actions
+    },
+    {
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("August 11, 2018 00:00:00")), 0),
+      end: new Date("August 12, 2018 23:59:59"),
+      title: 'Padron Riesgo*',
+      color: colors.yellow,
+      actions: this.actions
+    },
+    {
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("August 21, 2018 00:00:00")), 0),
+      end: new Date("August 21, 2018 23:59:59"),
+      title: 'Renovaciones',
+      color: colors.blue,
+      actions: this.actions
+    },
+    {
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("August 22, 2018 00:00:00")), 0),
+      end: new Date("August 22, 2018 23:59:59"),
+      title: 'Opeautos',
+      color: colors.blue,
+      actions: this.actions
+    },
+    {
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("August 23, 2018 00:00:00")), 0),
+      end: new Date("August 26, 2018 23:59:59"),
       title: 'Cierre de Cartera',
       color: colors.red,
       actions: this.actions
+    },
+    {
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("August 27, 2018 00:00:00")), 0),
+      end: new Date("August 31, 2018 23:59:59"),
+      title: 'Envio Eresumen',
+      color: colors.red,
+      actions: this.actions
+    },
+    {
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("August 29, 2018 00:00:00")), 0),
+      end: new Date("August 29, 2018 23:59:59"),
+      title: 'Cierre Contable Et0*',
+      color: colors.red,
+      actions: this.actions
+    },
+
+    {
+      // subDays(startOfDay(new Date()), 0)
+      start: subDays(startOfDay(new Date("August 29, 2018 00:00:00")), 0),
+      end: new Date("August 29, 2018 23:59:59"),
+      title: 'Renovar Pass Visanet',
+      color: colors.red,
+      actions: this.actions
     }
+
+    
     // {
     //   start: startOfDay(new Date()),
     //   title: 'An event with no end date',
